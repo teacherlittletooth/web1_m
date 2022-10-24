@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(236, 220, 150);
+}
+
+#menu {
+    background-color: rgba(0, 128, 0, 0.517);
+    border-radius: 15px;
+    text-align: right;
+    padding-right: 50px;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgba(41, 41, 236, 0.935);
+}
+
+a:hover {
+    color: rgb(101, 205, 122);
+    background-color: white;
+    padding: 20px;
+}

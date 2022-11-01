@@ -1,0 +1,104 @@
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+#autor {
+    text-align: right;
+    padding-right: 25%;
+    font-style: italic;
+}
+
+h1::after {
+    content: "";
+    width: 200px;
+    height: 3px;
+    display: block;
+    background-color: currentColor;
+    margin: 15px auto;
+}
+
+h1::before {
+    content: "";
+    width: 200px;
+    height: 3px;
+    display: block;
+    background-color: currentColor;
+    margin: 15px auto;
+}
+
+p::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: currentColor;
+    display: block;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+
+.img-response {
+    width: 200px;
+    margin: 20px auto;
+}
+
+img {
+    width: 100%;
+}
+
+/* CSS que funcionará com largura máxima
+de 500px */
+@media (max-width: 500px) {
+    
+    .img-response {
+        position: fixed;
+        top: 5px;
+    }
+
+    img {
+        width: 30%;
+        border-radius: 50%;
+    }
+
+}
+
+/* CSS que funcionará com largura entre 800px e 1000px */
+@media (max-width: 1000px) and (min-width: 800px) {
+
+    #autor {
+        text-align: right;
+        padding-right: 35%;
+        font-style: italic;
+        text-decoration: underline;
+    }
+
+    body {
+        background-color: black;
+        color: white;
+    }
+
+}
+
+/* Para telas com 1001px ou mais de largura */
+@media (min-width: 1001px) {
+
+    body {
+        background-color: rgb(145, 196, 100);
+        color: rgb(38, 76, 165);
+    }
+
+    p::after {
+        content: "";
+        width: 50px;
+        height: 50px;
+        background-color: yellow;
+        display: block;
+        border-radius: 50%;
+        margin: 20px auto;
+    }
+
+}
+

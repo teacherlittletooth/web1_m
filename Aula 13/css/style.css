@@ -1,0 +1,131 @@
+#quadro {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, -10%);
+    background-color: grey;
+    width: 200px;
+    height: 200px;
+    animation-name: anim-quadro;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
+#moldura {
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, -5%);
+    background-color: pink;
+    width: 250px;
+    height: 250px;
+    animation-name: anim-moldura;
+    animation-duration: 2s;
+}
+
+@keyframes anim-moldura {
+    from {
+        width: 10000px;
+        height: 10000px;
+    }
+    to {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@keyframes anim-quadro {
+    0% {
+        border-radius: 50%;
+        box-shadow: 15px 15px 10px black;
+        width: 1000px;
+        height: 1000px;
+    }
+    50% {
+        border-radius: 25%;
+        box-shadow: 5px 5px 10px black;
+        width: 500px;
+        height: 500px;
+    }
+    100% {
+        border-radius: 0%;
+        box-shadow: 0px 0px 0px black;
+        width: 200px;
+        height: 200px;
+    }      
+}
+
+#id-carta {
+    display: block;
+    width: 200px;
+    animation-name: anim2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+#id-peixe {
+    display: block;
+    width: 200px;
+    transform: rotateY(180deg);
+    animation-name: nadando;
+    animation-duration: 5s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards;
+}
+
+#id-luva {
+    display: block;
+    width: 200px;
+}
+
+@keyframes anim {
+    from {
+        margin: 0%;
+        rotate: 0deg;
+    }
+    to {
+        margin: 0% 0% 0% 100%;
+        rotate: 360deg;
+    }
+}
+
+@keyframes anim2 {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(360deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes nadando {
+    0% {
+        rotate: 15deg;
+        position: relative;
+        margin: 5% 0% 0% 0%;
+    }
+    20% {
+        rotate: -15deg;
+        margin: 0% 0% 0% 20%;
+    }
+    40% {
+        rotate: 15deg;
+        margin: 5% 0% 0% 40%;
+    }
+    60% {
+        rotate: -15deg;
+        margin: 0% 0% 0% 60%;
+    }
+    80% {
+        rotate: 15deg;
+        margin: 5% 0% 0% 80%;
+    }
+    100% {
+        rotate: -15deg;
+        margin: 0% 0% 0% 100%;
+    }
+}

@@ -21,20 +21,25 @@ function nomeDaJogada(jogada) {
         break;
         case 3: return "Tesoura";
         break;
+        default: return "Opção inválida";
     }
 }
 
 var player = prompt(
     "Digite seu nome:"
-);
-
-var ptsPlayer = 0;
-var ptsCpu = 0;
-var game = true;
-
-while(game){
- 
-    var escolha = prompt(
+    );
+    
+    if(player == null || player == "") {
+        player = "Jogador";
+    }
+    
+    var ptsPlayer = 0;
+    var ptsCpu = 0;
+    var game = true;
+    
+    while(game) { //Início do turno do jogo
+        
+        var escolha = prompt(
         "Escolha uma opção:\n1 - Pedra\n2 - Papel\n3 - Tesoura"
         );
         
@@ -55,27 +60,37 @@ while(game){
         2 ganha do 1
         3 ganha do 2
         */
-       
-       if(escolha == 1 && escolhaCpu == 3 ||
+        
+        if(escolha == 1 && escolhaCpu == 3 ||
         escolha == 2 && escolhaCpu == 1 ||
         escolha == 3 && escolhaCpu == 2) {
-            alert("VITÓRIA!");
+            alert("Ponto para " + player);
             ptsPlayer++; //ptsPlayer = ptsPlayer + 1
         } else if(escolha == escolhaCpu) {
             alert("EMPATOU.");
         } else {
-            alert("DERROTA!");
+            alert("Ponto para CPU");
             ptsCpu++;
         }
 
         if( !confirm("Deseja continuar?") ){
             game = !game;
         }
+        
+    } //Fim do turno do jogo
+    
+    var winner;
 
+    if(ptsPlayer > ptsCpu) {
+        winner = player;
+    } else if(ptsPlayer == ptsCpu) {
+        winner = "Empate";
+    } else {
+        winner = "CPU";
     }
 
     alert(
         "::: GAME OVER :::\n" + player + ": " +
         ptsPlayer + " pts\nCPU: " +
-        ptsCpu + " pts"
-    );
+        ptsCpu + " pts\n\nVencedor: " + winner
+        );

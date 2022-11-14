@@ -25,72 +25,91 @@ function nomeDaJogada(jogada) {
     }
 }
 
-var player = prompt(
-    "Digite seu nome:"
-    );
+var player;
+var ptsPlayer, ptsCpu;
+
+function getNickNameAndStart() {
+    player = document.querySelector("#player").value;
     
     if(player == null || player == "") {
         player = "Jogador";
     }
     
-    var ptsPlayer = 0;
-    var ptsCpu = 0;
-    var game = true;
-    
-    while(game) { //Início do turno do jogo
-        
-        var escolha = prompt(
-        "Escolha uma opção:\n1 - Pedra\n2 - Papel\n3 - Tesoura"
-        );
-        
-        if(escolha != 1 && escolha != 2 && escolha != 3) {
-            alert("Entrada inválida!");
-            console.log("Entrada inválida");
-        } else {
-            console.log(player + ": " + nomeDaJogada(Number(escolha)));
-        }
-        
-        var escolhaCpu = Math.floor((Math.random() * 3) + 1);
-        
-        console.log("CPU: " + nomeDaJogada(escolhaCpu));
-        
-        /*
-        1-Pedra; 2-Papel; 3-Tesoura
-        1 ganha do 3
-        2 ganha do 1
-        3 ganha do 2
-        */
-        
-        if(escolha == 1 && escolhaCpu == 3 ||
-        escolha == 2 && escolhaCpu == 1 ||
-        escolha == 3 && escolhaCpu == 2) {
-            alert("Ponto para " + player);
-            ptsPlayer++; //ptsPlayer = ptsPlayer + 1
-        } else if(escolha == escolhaCpu) {
-            alert("EMPATOU.");
-        } else {
-            alert("Ponto para CPU");
-            ptsCpu++;
-        }
+    ptsPlayer = 0;
+    ptsCpu = 0;
 
-        if( !confirm("Deseja continuar?") ){
-            game = !game;
-        }
-        
-    } //Fim do turno do jogo
-    
-    var winner;
+    game(true);
+}
 
-    if(ptsPlayer > ptsCpu) {
-        winner = player;
-    } else if(ptsPlayer == ptsCpu) {
-        winner = "Empate";
-    } else {
-        winner = "CPU";
+// var player = prompt(
+//     "Digite seu nome:"
+//     );
+    
+    
+    function game(statusGame) {
+        var x = false;
+        
+        document.querySelector("#title").innerHTML = player + ", escolha sua jogada";
+        document.querySelector("#textbox").style.display = "none";
+        document.querySelector(".btn-options").style.display = "flex";
+
+        while(x) { //Início do turno do jogo
+            
+            var escolha = prompt(
+                "Escolha uma opção:\n1 - Pedra\n2 - Papel\n3 - Tesoura"
+            );
+                
+                if(escolha != 1 && escolha != 2 && escolha != 3) {
+                    alert("Entrada inválida!");
+                    console.log("Entrada inválida");
+                } else {
+                    console.log(player + ": " + nomeDaJogada(Number(escolha)));
+                }
+                
+                var escolhaCpu = Math.floor((Math.random() * 3) + 1);
+                
+                console.log("CPU: " + nomeDaJogada(escolhaCpu));
+                
+                /*
+                1-Pedra; 2-Papel; 3-Tesoura
+                1 ganha do 3
+                2 ganha do 1
+                3 ganha do 2
+                */
+               
+               if(escolha == 1 && escolhaCpu == 3 ||
+                escolha == 2 && escolhaCpu == 1 ||
+                escolha == 3 && escolhaCpu == 2) {
+                    alert("Ponto para " + player);
+                    ptsPlayer++; //ptsPlayer = ptsPlayer + 1
+                } else if(escolha == escolhaCpu) {
+                    alert("EMPATOU.");
+                } else {
+                    alert("Ponto para CPU");
+                    ptsCpu++;
+                }
+                
+                if( !confirm("Deseja continuar?") ){
+                    game = !game;
+                }
+                
+            } //Fim do turno do jogo
+        }
+    
+    function endGame() {
+        var winner;
+        
+        if(ptsPlayer > ptsCpu) {
+            return winner = player;
+        } else if(ptsPlayer == ptsCpu) {
+            return winner = "Empate";
+        } else {
+            return winner = "CPU";
+        }   
     }
 
-    alert(
-        "::: GAME OVER :::\n" + player + ": " +
-        ptsPlayer + " pts\nCPU: " +
-        ptsCpu + " pts\n\nVencedor: " + winner
-        );
+        // alert(
+        //     "::: GAME OVER :::\n" + player + ": " +
+        //     ptsPlayer + " pts\nCPU: " +
+        //     ptsCpu + " pts\n\nVencedor: " + winner
+        // );

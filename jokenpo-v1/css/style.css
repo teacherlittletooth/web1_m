@@ -1,0 +1,59 @@
+body {
+    background-color: rgb(159, 255, 75);
+}
+
+main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 75%;
+    background-color: purple;
+    border-radius: 10px;
+}
+
+.btn-options {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#btn-pedra, #btn-papel, #btn-tesoura {
+    width: auto;
+    height: 150px;
+    margin: 20px;
+    box-shadow: 3px 3px 3px black;
+}
+
+a {
+    transition: 0.5s;
+}
+
+a:hover {
+    transform: scale(1.2);
+}
+
+#placar {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.placar-final {
+    transition: bottom 1s;
+    position: fixed;
+    bottom: 20% !important;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 30pt;
+}
+
+#btn-music {
+    position: fixed;
+    top: 4%;
+    right: 2%;
+}

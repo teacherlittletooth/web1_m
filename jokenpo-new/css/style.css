@@ -1,0 +1,22 @@
+body {
+    background-color: blueviolet !important;
+}
+
+main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: 75%;
+    background-color: rgb(131, 194, 37);
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+#center-all {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+}

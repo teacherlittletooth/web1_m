@@ -1,0 +1,15 @@
+body {
+    background-color: grey;
+}
+
+main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.250);
+    width: 50%;
+    height: 60%;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px black;
+}

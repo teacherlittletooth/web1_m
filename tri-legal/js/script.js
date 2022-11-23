@@ -21,6 +21,47 @@ btnAdd.addEventListener("click", function(){
     } else {
         listNumber.push(idNumber.value);
         console.log(listNumber);
+        selectNumber.innerHTML += "<option value=''>" +
+                                        idNumber.value +
+                                    "</option>"
     }
 });
 
+
+btnEnd.addEventListener("click", function(){
+    //Pegando o tamanho da lista
+    countNumber.innerHTML += listNumber.length;
+
+    //Varrendo a lista e somando todos os números
+    var sumFor = 0;
+    // for clássico
+    // for(var i=0; i<listNumber.length; i++){
+    //    sumFor += listNumber[i];
+    // }
+
+    // for simplificado (foreach)
+    for(i in listNumber) {
+        sumFor += Number(listNumber[i]);
+    }
+
+    sumNumber.innerHTML += sumFor;
+
+    //Pegando o maior número da lista
+    maxNumber.innerHTML += Math.max(...listNumber);
+    //as reticências extrairão os números da lista para o formato: 0, 1, 2...
+
+    //Pegando o menor número da lista
+    minNumber.innerHTML += Math.min(...listNumber);
+
+    //Pegando o primeiro número da lista
+    firstNumber.innerHTML += listNumber[0];
+
+    //Pegando o último número da lista
+    lastNumber.innerHTML += listNumber[listNumber.length - 1];
+    
+    //Ordenando de forma crescente (ascendente)
+    var sortAsc = listNumber.sort((lesser, greater) => lesser - greater);
+
+    sortAscNumber.innerHTML += sortAsc;
+
+});

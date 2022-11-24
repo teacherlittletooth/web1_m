@@ -1,0 +1,19 @@
+main {
+    width: 60%;
+    height: 60%;
+    background-color: rgb(149, 99, 201);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px black;
+}
+
+#main-content {
+    padding: 30px;
+}
+
+#result-content {
+    display: none;
+}

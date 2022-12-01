@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Range</title>
+</head>
+<body>
+
+    <div id="text-box-align">
+    <pre id="text-box">
+Te encontrei toda remelenta e estronchada
+Num bar entregue às bebida
+Te cortei os cabelos do sovaco e as unhas do pé
+Te chamei de querida
+Te ensinei todos os auto-reverse da vida
+E o movimento de translação que faz a Terra girar
+Te falei que o importante é competir
+Mas te mato de pancada se você não ganhar</pre>
+        
+        <input type="range" id="range-text-box" orient="vertical" min="0" max="100" value="100" step="10" list="tickmarks">
+
+        <datalist id="tickmarks">
+            <option value="0" label="MAX"></option>
+            <option value="100" label="MIN"></option>
+        </datalist>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

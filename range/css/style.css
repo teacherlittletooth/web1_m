@@ -1,0 +1,29 @@
+body {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#text-box {
+    border: solid 1px black;
+    padding: 10px;
+    font-size: 14pt;
+}
+
+#range-text-box {
+    appearance: slider-vertical;
+}
+
+datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: sideways-lr;
+    position: relative;
+    right: 50px;
+}
+
+#text-box-align {
+    display: flex;
+}

@@ -8,31 +8,26 @@
     <title>Range</title>
 </head>
 <body>
+    <button type="button" onclick="window.location.href='range2.html'">
+        Exemplo 2
+    </button>
 
-   <div id="text-box-align">
-     <div id="border-text-box">
-         
-<pre id="text-box">Te encontrei toda remelenta e estronchada
-Num bar entregue às bebida
-Te cortei os cabelos do sovaco e as unhas do pé
-Te chamei de querida
-Te ensinei todos os auto-reverse da vida
-E o movimento de translação que faz a Terra girar
-Te falei que o importante é competir
-Mas te mato de pancada se você não ganhar</pre>     
+    <pre id="strophe">
+Analisando essa cadeia hereditária
+Quero me livrar dessa situação precária
+Analisando essa cadeia hereditária
+Quero me livrar dessa situação precária
+Onde o rico cada vez fica mais rico
+E o pobre cada vez fica mais pobre
+    </pre>
 
-      </div>
-   </div>
+    <input type="range" id="zoom" min="6" max="36" value="14" orient="horizontal" step="2" list="tickmarks">
 
-<div id="range-align">
-    <input type="range" id="range-text-box" orient="vertical" min="0" max="100" value="100" step="10" list="tickmarks">
-    
     <datalist id="tickmarks">
-        <option value="0" label="MAX"></option>
-        <option value="100" label="MIN"></option>
+        <option value="6" label="Out"></option>
+        <option value="36" label="In"></option>
     </datalist>
-</div>
-
-    <script src="js/script.js"></script>
+    
+    <script src="js/script-index.js"></script>
 </body>
 </html>

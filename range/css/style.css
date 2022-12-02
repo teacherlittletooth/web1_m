@@ -83,3 +83,25 @@ datalist {
     border-radius: 50%;
     border: solid 1px;
 }
+
+
+#img {
+    display: block;
+    margin: auto;
+    width: 500px;
+    rotate: 0deg;
+}
+
+#zoom-img {
+    position: fixed;
+    bottom: 50px;
+    width: 98%;
+}
+
+#rotate {
+    position: fixed;
+    left: -200px;
+    top: 280px;
+    rotate: 90deg;
+    width: 40%;
+}

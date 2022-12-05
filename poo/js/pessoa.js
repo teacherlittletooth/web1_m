@@ -17,7 +17,7 @@ class Pessoa {
         ((this.password != null && this.password != "")
         ? "xxxxxxx" : "Não cadastrada") +
             
-            "<br><br><button id='"+ this.id +"'>Excluir</button>" +
-            "<button id='"+ this.id +"'>Editar</button>";
+            "<br><br><div class='botoes'><button onclick='deleteObject("+this.id+")' class='delete'>Excluir</button>" +
+            "<button onclick='editObject("+this.id+")' class='edit'>Editar</button></div>";
     }
 }

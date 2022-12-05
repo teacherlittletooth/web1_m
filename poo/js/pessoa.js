@@ -1,11 +1,6 @@
-class Pessoa {
-    name;
-    email;
-    phone;
-    cpf;
-    password;
-
-    constructor(nameReceived, emailReceived, phoneReceived, cpfReceived, passwordReceived) {
+class Pessoa {   
+    constructor(id, nameReceived, emailReceived, phoneReceived, cpfReceived, passwordReceived) {
+        this.id = id;
         this.name = nameReceived;
         this.email = emailReceived;
         this.phone = phoneReceived;
@@ -20,6 +15,9 @@ class Pessoa {
             "<br>CPF: " + this.cpf +
             "<br>Senha: " + 
         ((this.password != null && this.password != "")
-        ? "xxxxxxx" : "Não cadastrada");
+        ? "xxxxxxx" : "Não cadastrada") +
+            
+            "<br><br><button id='"+ this.id +"'>Excluir</button>" +
+            "<button id='"+ this.id +"'>Editar</button>";
     }
 }

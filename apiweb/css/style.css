@@ -1,0 +1,20 @@
+form {
+    /* Posição do container */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Bordas */
+    border: double 6px green;
+    border-radius: 15px;
+    
+    /* Espaçamento interno */
+    padding: 0px 40px 40px 40px;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+    text-align: center;
+}

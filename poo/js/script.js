@@ -11,7 +11,6 @@ var password = document.getElementById("password");
 
 //Lista vazia
 var listPessoas = []; //Para os objetos da classe pessoa
-var listDados = []; //Para apresentação dos dados na tela
 var idPessoa = 0;
 
 submit.addEventListener("click", function(){
@@ -62,10 +61,16 @@ function clearFields() {
     userName.focus();
 }
 
-function deleteObject(id, name) {
-    var yes = confirm("Deseja excluir o cadastro " + name + "?");
+function deleteObject(id) {
+    //Confirmação de exclusão
+    var yes = confirm("Deseja excluir o cadastro " + id + "?");
     if(yes) {
-        listPessoas.splice(id, 1);
+        //Encontrando o id na lista
+        var idDelete = listPessoas.find((i) => i.getId() == id);
+        //Encontrando o índice da lista (indexOf) que contém o elemento id
+        //e enviando este como parâmetro de exclusão
+        listPessoas.splice(listPessoas.indexOf(idDelete), 1);
+
         dados.innerHTML = "";
         for(i in listPessoas) {
             dados.innerHTML += listPessoas[i].toString() + "<hr>";

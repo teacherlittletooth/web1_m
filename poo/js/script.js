@@ -62,8 +62,8 @@ function clearFields() {
     userName.focus();
 }
 
-function deleteObject(id) {
-    var yes = confirm("Deseja excluir o cadastro " + id + "?");
+function deleteObject(id, name) {
+    var yes = confirm("Deseja excluir o cadastro " + name + "?");
     if(yes) {
         listPessoas.splice(id, 1);
         dados.innerHTML = "";

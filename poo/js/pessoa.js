@@ -7,6 +7,30 @@ class Pessoa {
         this.cpf = cpfReceived;
         this.password = passwordReceived;
     }
+    
+    getId() {
+        return this.id;
+    }
+
+    getName() {
+        return this.name;
+    }
+
+    getEmail() {
+        return this.email;
+    }
+
+    getPhone() {
+        return this.phone;
+    }
+
+    getCpf() {
+        return this.cpf;
+    }
+
+    getPassword() {
+        return this.password;
+    }
 
     toString() {
         return "Nome: " + this.name +
@@ -18,6 +42,7 @@ class Pessoa {
         ? "xxxxxxx" : "Não cadastrada") +
             
             "<br><br><div class='botoes'><button onclick='deleteObject("+this.id+")' class='delete'>Excluir</button>" +
+            
             "<button onclick='editObject("+this.id+")' class='edit'>Editar</button></div>";
     }
 }

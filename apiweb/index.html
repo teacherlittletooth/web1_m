@@ -13,20 +13,36 @@
         <h1 onclick="presentation()">API Viacep</h1>
         
         <label>Cep:
-        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
-               onblur="pesquisacep(this.value);" /></label><br />
+        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" />
+        <small>Digite o CEP e pressione TAB</small></label><br />
+        
         <label>Rua:
-        <input name="rua" type="text" id="rua" size="60" /></label><br />
+        <input name="rua" type="text" id="rua" size="40" /></label><br />
+        
         <label>Bairro:
         <input name="bairro" type="text" id="bairro" size="40" /></label><br />
+        
         <label>Cidade:
         <input name="cidade" type="text" id="cidade" size="40" /></label><br />
+        
         <label>Estado:
         <input name="uf" type="text" id="uf" size="2" /></label><br />
+        
         <label>IBGE:
         <input name="ibge" type="text" id="ibge" size="8" /></label><br />
+
+        <input type="reset" value="Nova pesquisa" onclick="cepFocus()">
     </form>
 
+    <div id="cep-list"></div>
+
+    <script src="js/cep.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="js/mask.js"></script>
+
+    <script>
+        $("#cep").mask("99999-999");
+    </script>
 </body>
 </html>

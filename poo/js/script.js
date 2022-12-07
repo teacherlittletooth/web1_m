@@ -1,6 +1,9 @@
 //Mapeando elementos do layout
-const submit = document.getElementById("submit");
+var submit = document.getElementById("submit");
 const dados = document.getElementById("dados");
+var inputUpdate = document.getElementById("update");
+
+inputUpdate.style.display = "none";
 
 //Usamos "var" porque queremos utilizar estes elementos dentro de outra função
 var userName = document.getElementById("name");
@@ -79,7 +82,54 @@ function deleteObject(id) {
     console.log(listPessoas);
 }
 
+var idUpdate;
 
 function editObject(id) {
+    //Fazer desaparecer o botão cadastrar e aparecer o atualizar
+    inputUpdate.style.display = "block";
+    submit.style.display = "none";
+
+    //Encontrando o objeto na lista por meio do id enviado no parâmetro
+    var idEdit = listPessoas.find((i) => i.getId() == id);
+    idUpdate = idEdit.getId();
+    console.log(idEdit);
     
+    //Injetando os atributos do objeto nos campos do html
+    userName.value = idEdit.getName();
+    email.value = idEdit.getEmail();
+    phone.value = idEdit.getPhone();
+    cpf.value = idEdit.getCpf();
+    password.value = idEdit.getPassword();
+}
+
+function update() {
+    //console.log(idUpdate);
+    var objUpdate = new Pessoa(
+        idUpdate,
+        userName.value,
+        email.value,
+        phone.value,
+        cpf.value,
+        password.value
+    )
+
+    //Apagando o objeto que foi editado
+    listPessoas.splice(idUpdate, 1);
+    
+    //Inserindo um novo objeto com o mesmo id do objeto editado (gambiarra)
+    listPessoas.unshift(objUpdate);
+
+    console.log(listPessoas);
+    
+    dados.innerHTML = "";
+    
+    for(i in listPessoas) {
+        dados.innerHTML += listPessoas[i].toString() + "<hr>";
+    }
+
+    //Fazer desaparecer o botão atualizar e aparecer o cadastrar
+    inputUpdate.style.display = "none";
+    submit.style.display = "block";
+
+    clearFields();
 }

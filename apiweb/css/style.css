@@ -18,3 +18,23 @@ h1 {
     cursor: pointer;
     text-align: center;
 }
+
+input {
+    margin: 0px 0px 3px 0px;
+}
+
+#ibge {
+    margin-bottom: 15px;
+}
+
+input[type=reset] {
+    width: 80%;
+    padding: 5px;
+    display: block;
+    margin: auto;
+}
+
+#cep-list {
+    position: fixed;
+    bottom: 0px;
+}

@@ -1,3 +1,7 @@
+function cepFocus() {
+    document.getElementById("cep").focus();
+}
+
 function presentation() {
     alert("Desenvolvido por Donini\n2022 - QI");
 }
@@ -11,8 +15,26 @@ function limpa_formulário_cep() {
     document.getElementById('ibge').value=("");
 }
 
+var cep;
+var listCep = [];
+
 function meu_callback(conteudo) {
 if (!("erro" in conteudo)) {
+    //Criação de objeto da classe Cep com valores recebidos da API
+    var cepObj = new Cep(
+        cep,
+        conteudo.logradouro,
+        conteudo.bairro,
+        conteudo.localidade,
+        conteudo.uf,
+        conteudo.ibge
+    );
+
+    listCep.push(cepObj);
+    console.log(listCep);
+
+    document.getElementById("cep-list").innerHTML += cepObj.toString();
+
     //Atualiza os campos com os valores.
     document.getElementById('rua').value=(conteudo.logradouro);
     document.getElementById('bairro').value=(conteudo.bairro);
@@ -30,7 +52,7 @@ else {
 function pesquisacep(valor) {
 
 //Nova variável "cep" somente com dígitos.
-var cep = valor.replace(/\D/g, '');
+cep = valor.replace(/\D/g, '');
 
 //Verifica se campo cep possui valor informado.
 if (cep != "") {
